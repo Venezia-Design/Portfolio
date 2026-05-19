@@ -129,9 +129,12 @@
   padding: 1.5rem 1.25rem;
 }
 
-  .ascii-deco { /*ascii art oculto en mobile*/
-    display: none;
-  }
+  .ascii-deco,
+canvas.ascii-deco--home,
+canvas.ascii-deco--about,
+canvas.ascii-deco--contact {
+  display: none;
+}
 
   /*botón cta*/
   .btn-cta {

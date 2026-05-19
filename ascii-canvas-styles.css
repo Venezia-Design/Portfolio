@@ -1,0 +1,38 @@
+/* ==========================================
+   ASCII ART INTERACTIVO - Estilos para canvas
+   Reemplaza las reglas de .ascii-deco img
+   ========================================== */
+
+/* Los canvas heredan la misma posición que los img originales */
+canvas.ascii-deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  display: block;
+}
+
+canvas.ascii-deco--home {
+  top: 5rem;        
+  left: 15rem;
+  width: 818px;
+  height: 857px;
+}
+
+canvas.ascii-deco--about {
+  top: 66rem;
+  right: 2rem;
+  z-index: 0;
+  width: 933px;
+  height: 1234px;
+}
+
+
+canvas.ascii-deco--contact {
+  position: absolute;
+  right: -35px;   
+  top: -300px;     
+  width: 600px;
+  height: 1000px;
+  pointer-events: none;
+  z-index: 0;
+}

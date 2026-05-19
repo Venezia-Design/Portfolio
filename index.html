@@ -18,6 +18,7 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style-responsive.css">
+  <link rel="stylesheet" href="ascii-canvas-styles.css">
  
 </head>
 <body>
@@ -207,32 +208,34 @@
 </section>
 
 <!-- Contact -->
- <section id="contact" class="contact-section">
+<section id="contact" class="contact-section">
+  <img src="images/ascii-deco3.svg" class="ascii-deco ascii-deco--contact" aria-hidden="true">
 
-  <div class="w-100">
-    <div class="row align-items-center justify-content-center fondo-ascii">
+  <div class="row align-items-center justify-content-center">
 
-      <div class="col-md-5 contact-img">
-        <img src="images/imagen-contact.svg" alt="collage contacto" class="img-fluid">
-      </div>
-
-      <div class="col-md-5">
-        <h2>Contact</h2>
-        <p>Buenos Aires, Argentina</p>
-        <p>veneziaabarquero@gmail.com</p>
-        <p>+54 11 2736-0056</p>
-
-        <div class="social-links">
-          <a href="https://instagram.com/venezia.abqro" target="_blank" aria-label="Instagram"> <!-- target blank para que los iconos redirijan una nueva pestaña-->
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://behance.net/veneziaabarque1" target="_blank" aria-label="Behance">
-            <i class="fa-brands fa-behance"></i>
-          </a>
-        </div>
-      </div>
-
+    <div class="col-md-5 contact-img">
+      <img src="images/imagen-contact.svg" alt="collage contacto" class="img-fluid">
     </div>
+
+    <div class="col-md-5">
+      <h2>Contact</h2>
+      <p>Buenos Aires, Argentina</p>
+      <p>veneziaabarquero@gmail.com</p>
+      <p>+54 11 2736-0056</p>
+
+      <div class="social-links">
+        <a href="https://instagram.com/venezia.abqro" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://behance.net/veneziaabarque1" target="_blank" aria-label="Behance">
+          <i class="fa-brands fa-behance"></i>
+        </a>
+        <a href="archivos/CV_Venezia_Abarquero.pdf" target="_blank" aria-label="CV" download>
+        CV
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -245,5 +248,6 @@
   <!-- Boton cta fijo -->
   <a class="btn btn-outline-dark btn-cta" href="mailto:veneziaabarquero@gmail.com">Email me!</a>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="ascii-interactive.js"></script>
 </body>
 </html>
