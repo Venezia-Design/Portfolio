@@ -109,15 +109,19 @@
   }
 
   /*contact*/
-  .contact-section {
-    padding: 3rem 1.25rem;
-    min-height: auto;
-  }
+.contact-section {
+  padding: 3rem 2rem 3rem 1.25rem;
+  min-height: auto;
+}
 
   .contact-section .col-md-5 {
     max-width: 50%;
     flex: 0 0 100%;
   }
+
+  .contact-section p {
+  word-break: break-all;
+}
 
   .contact-img {
     margin-bottom: 1.5rem;
