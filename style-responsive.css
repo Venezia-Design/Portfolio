@@ -129,11 +129,11 @@
   padding: 1.5rem 1.25rem;
 }
 
-  .ascii-deco,
+.ascii-deco,
 canvas.ascii-deco--home,
 canvas.ascii-deco--about,
 canvas.ascii-deco--contact {
-  display: none;
+  display: none !important;
 }
 
   /*botón cta*/
@@ -225,6 +225,12 @@ canvas.ascii-deco--contact {
     font-size: 0.75rem;
     white-space: nowrap; /*evita que el texto se corte en dos líneas*/
   }
+
+  .social-links a {
+  width: 28px;
+  height: 28px;
+  font-size: 13px;
+}
 
 }
 
