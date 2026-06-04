@@ -107,6 +107,8 @@ body.project-page {
 .project-nav {
   padding: 2.5rem 0;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .project-nav .page-link {
