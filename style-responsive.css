@@ -100,9 +100,16 @@
     scale: 100%; 
   }
 
-  .work-title {
-    font-size: 0.75rem;
-  }
+  .work-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+ .work-title {
+  font-size: 0.75rem;
+  color: black;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
 
   .carousel-3d {
     margin-top: 8vh;

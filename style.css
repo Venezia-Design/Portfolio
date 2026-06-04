@@ -42,9 +42,8 @@ body {
   color: black;
 }
 
-
 .main-content {
-  margin-left: 6rem; /*lo que ocupa el nav lateral*/
+  margin-left: 6rem;
 }
 
 /* Home */
@@ -58,19 +57,19 @@ body {
   max-width: 100%;
 }
 
-/*about*/
+/* About */
 .about-section {
   padding: 6rem 3rem;
-  margin-top: 20vh;        /* espacio blanco entre home y about */
-  scroll-margin-top: 0;    /* cuando el nav linkea a #about, la sección arranca desde arriba del viewport */
+  margin-top: 20vh;
+  scroll-margin-top: 0;
 }
 
 .academic-info p {
-  font-size: 0.75rem; /* 12px */
+  font-size: 0.75rem;
   color: grey;
 }
 
-/*work*/
+/* Work */
 .work-section {
   position: relative;
   padding: 6rem 3rem;
@@ -78,23 +77,49 @@ body {
   scale: 85%;
 }
 
+/* Galería Work */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
 .work-link {
   text-decoration: none;
   color: black;
   display: block;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 1.4s ease, transform 1.4s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.work-link.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.work-img {
   position: relative;
   overflow: hidden;
 }
 
-.work-link img {
+.work-img img {
   display: block;
-  transition: opacity 0.3s ease;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
 }
 
-.work-link::after {
+.work-link:hover .work-img img {
+  transform: scale(1.04);
+}
+
+.work-img::after {
   content: 'Ver proyecto';
   position: absolute;
-  inset: 0; /* abreviar top: 0; right: 0; bottom: 0; left: 0 */
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   font-weight: 600;
@@ -103,8 +128,39 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
 }
-.work-link:hover::after {
+
+.work-link:hover .work-img::after {
+  opacity: 1;
+}
+
+.work-link:hover {
+  border-bottom: 1px solid black;
+}
+
+ .work-title {
+  font-size: 0.75rem;
+  color: black;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+.work-number {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.1em;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-link:hover .work-number {
   opacity: 1;
 }
 
@@ -149,14 +205,14 @@ body {
   opacity: 0.6;
 }
 
-/*footer*/
+/* Footer */
 .footer {
   margin-left: 6rem;
   padding: 1.5rem 3rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 0.75rem;
   color: grey;
-  text-align: center
+  text-align: center;
 }
 
 .footer p {
@@ -178,7 +234,7 @@ h2 {
 }
 
 h3 {
-  font-size: 0.9375rem; 
+  font-size: 0.9375rem;
   font-weight: 600;
   color: grey;
 }
@@ -217,25 +273,21 @@ h3 {
   z-index: 2;
 }
 
-
 .ascii-deco--home {
   top: 5rem;
   left: 15rem;
-  
 }
 
-
-.ascii-deco--about{
+.ascii-deco--about {
   top: 66rem;
   right: 2rem;
   z-index: 0;
 }
 
-
-/* animaciones */
+/* Animaciones */
 .fade-in {
- -webkit-animation: fade-in 1.2s linear both;
- animation: fade-in 1.2s linear both;
+  -webkit-animation: fade-in 1.2s linear both;
+  animation: fade-in 1.2s linear both;
 }
 
 @-webkit-keyframes fade-in {
@@ -247,22 +299,42 @@ h3 {
   100% { opacity: 1; }
 }
 
-@-webkit-keyframes jello-horizontal {
-  0%   { -webkit-transform: scale3d(1, 1, 1);      transform: scale3d(1, 1, 1); }
-  30%  { -webkit-transform: scale3d(1.25, 0.75, 1); transform: scale3d(1.25, 0.75, 1); }
-  40%  { -webkit-transform: scale3d(0.75, 1.25, 1); transform: scale3d(0.75, 1.25, 1); }
-  50%  { -webkit-transform: scale3d(1.15, 0.85, 1); transform: scale3d(1.15, 0.85, 1); }
-  65%  { -webkit-transform: scale3d(0.95, 1.05, 1); transform: scale3d(0.95, 1.05, 1); }
-  75%  { -webkit-transform: scale3d(1.05, 0.95, 1); transform: scale3d(1.05, 0.95, 1); }
-  100% { -webkit-transform: scale3d(1, 1, 1);      transform: scale3d(1, 1, 1); }
-}
-@keyframes jello-horizontal {
-  0%   { -webkit-transform: scale3d(1, 1, 1);      transform: scale3d(1, 1, 1); }
-  30%  { -webkit-transform: scale3d(1.25, 0.75, 1); transform: scale3d(1.25, 0.75, 1); }
-  40%  { -webkit-transform: scale3d(0.75, 1.25, 1); transform: scale3d(0.75, 1.25, 1); }
-  50%  { -webkit-transform: scale3d(1.15, 0.85, 1); transform: scale3d(1.15, 0.85, 1); }
-  65%  { -webkit-transform: scale3d(0.95, 1.05, 1); transform: scale3d(0.95, 1.05, 1); }
-  75%  { -webkit-transform: scale3d(1.05, 0.95, 1); transform: scale3d(1.05, 0.95, 1); }
-  100% { -webkit-transform: scale3d(1, 1, 1);      transform: scale3d(1, 1, 1); }
+/* Animaciones scroll */
+.fade-in-left,
+.fade-in-right {
+  opacity: 0;
+  transition: opacity 1.4s ease, transform 1.4s ease;
 }
 
+.fade-in-left {
+  transform: translateX(-30px);
+}
+
+.fade-in-right {
+  transform: translateX(30px);
+}
+
+.fade-in-left.visible,
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@-webkit-keyframes jello-horizontal {
+  0%   { -webkit-transform: scale3d(1, 1, 1);       transform: scale3d(1, 1, 1); }
+  30%  { -webkit-transform: scale3d(1.25, 0.75, 1); transform: scale3d(1.25, 0.75, 1); }
+  40%  { -webkit-transform: scale3d(0.75, 1.25, 1); transform: scale3d(0.75, 1.25, 1); }
+  50%  { -webkit-transform: scale3d(1.15, 0.85, 1); transform: scale3d(1.15, 0.85, 1); }
+  65%  { -webkit-transform: scale3d(0.95, 1.05, 1); transform: scale3d(0.95, 1.05, 1); }
+  75%  { -webkit-transform: scale3d(1.05, 0.95, 1); transform: scale3d(1.05, 0.95, 1); }
+  100% { -webkit-transform: scale3d(1, 1, 1);       transform: scale3d(1, 1, 1); }
+}
+@keyframes jello-horizontal {
+  0%   { transform: scale3d(1, 1, 1); }
+  30%  { transform: scale3d(1.25, 0.75, 1); }
+  40%  { transform: scale3d(0.75, 1.25, 1); }
+  50%  { transform: scale3d(1.15, 0.85, 1); }
+  65%  { transform: scale3d(0.95, 1.05, 1); }
+  75%  { transform: scale3d(1.05, 0.95, 1); }
+  100% { transform: scale3d(1, 1, 1); }
+}

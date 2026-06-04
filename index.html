@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- el ancho del dispositivo es el ancho de la pagina (sirve para responsive) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Venezia | Multimedia Designer</title>
   
   <!-- Google fonts -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <meta name="format-detection" content="telephone=no">
@@ -14,7 +14,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   
   <!-- Iconos redes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Estilos -->
   <link rel="stylesheet" href="style.css">
@@ -35,7 +35,7 @@
       <p class="nav-subtitle">Portfolio</p>
       <h1>26'</h1>
     </a>
-    <ul class="nav flex-column mt-5"> <!-- margen top para separar del logo -->
+    <ul class="nav flex-column mt-5">
       <li><a class="nav-link" href="#about">About</a></li>
       <li><a class="nav-link" href="#work">Work</a></li>
       <li><a class="nav-link" href="#contact">Contact</a></li>
@@ -47,7 +47,7 @@
 
     <!-- Home -->
     <header id="home">
-      <img src="images/asciiart-deco1.svg" class="ascii-deco ascii-deco--home" aria-hidden="true"> <!-- para que no se lean los ascii art como texto -->
+      <img src="images/asciiart-deco1.svg" class="ascii-deco ascii-deco--home" aria-hidden="true">
       <img src="images/imagen-home.svg" class="img-fluid fade-in" alt="imagen home">
     </header>
 
@@ -57,13 +57,12 @@
       <div class="row">
 
         <!-- Columna izquierda foto -->
-        <div class="col-md-5">
+        <div class="col-md-5 fade-in-left">
           <img src="images/foto about.svg" alt="foto venezia" class="img-fluid">
         </div>
 
         <!-- Columna derecha texto sobre mi -->
-        <div class="col-md-6">
-
+        <div class="col-md-6 fade-in-right">
           <h2>About</h2>
           <p>Soy estudiante avanzada de Diseño Multimedial, con experiencia en modelado y animación 3D, diseño de piezas gráficas, edición audiovisual y desarrollo de visuales audioreactivos.</p>
           <p>Me interesa explorar distintas formas de comunicar a través de la imagen y el movimiento, combinando distintas técnicas y sensibilidad estética.</p>
@@ -89,8 +88,8 @@
               </div>
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
 
@@ -99,161 +98,170 @@
       <h2>Work</h2>
 
       <!-- galeria proyectos -->
-      <div class="row row-cols-2 row-cols-md-3 g-4"><!-- 2 columnas x fila para mobile y 3 para destok --> <!-- g4 gap entre cada columa de 4 -->
-        <div class="col">
-          <a href="proyecto-videoclip.html" class="work-link">
-            <img src="images/portada-videoclip.jpg" alt="Edicion y Montaje - Videoclip" class="img-fluid">
-            <p class="work-title">Edicion y Montaje - Videoclip</p>
-          </a>
-        </div>
+      <div class="work-grid">
 
-        <div class="col">
-          <a href="proyecto-fanzine.html" class="work-link">
-            <img src="images/portada-fanzine.jpg" alt="Diseño Editorial - Fanzine" class="img-fluid">
-            <p class="work-title">Diseño Editorial - Fanzine</p>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="proyecto-libro.html" class="work-link">
-            <img src="images/portada-libro.jpg" alt="Diseño Editorial - Libro Objeto" class="img-fluid">
-            <p class="work-title">Diseño Editorial - Libro Objeto</p>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="proyecto-visuales.html" class="work-link">
-            <img src="images/portada-visuales.jpg" alt="Arte Generativo - Visuales" class="img-fluid">
-            <p class="work-title">Arte Generativo - Visuales</p>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="proyecto-collage.html" class="work-link">
-            <img src="images/portada-collage.jpg" alt="Collage Creativo" class="img-fluid">
-            <p class="work-title">Collage Creativo</p>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="proyecto-modelado3D.html" class="work-link">
-            <img src="images/portada-tipografia3D.jpg" alt="Modelado y Esculpido 3D" class="img-fluid">
-            <p class="work-title">Modelado y Esculpido 3D</p>
-          </a>
-        </div>
-      </div>
-
-<!-- carrusel trabajo 3D -->
-  <div id="carouselExampleCaptions" class="carousel slide carousel-3d">
-
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-  </div>
-
-  <div class="carousel-inner">
-
-  <div class="carousel-item active">
-  <video class="d-block w-100" autoplay muted loop playsinline poster="images/carousel1.jpg">
-    <source src="images/video-carousel3D.mp4" type="video/mp4">
-  </video>
-  <div class="carousel-caption d-none d-md-block">
-    <h5>Animación y Modelado 3D/Escena</h5>
-    <p>"The Doors Room"</p>
-  </div>
-</div>
-
-    <div class="carousel-item">
-      <img src="images/carousel2.jpg" class="d-block w-100" alt="Slide 2">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Animación y Modelado 3D/Escena</h5>
-        <p>Una reinterpretación de "La Sala de las Puertas", la icónica y lúgubre habita​​​​​​​ción circular rodeada de puertas de Alicia en el País de las Maravillas (2010).</p>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="images/carousel3.jpg" class="d-block w-100" alt="Slide 3">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Animación y Modelado 3D/Escena</h5>
-        <p>Trabajé sobre su atmósfera y composición para llevarla a una versión 3D con una vision propia.</p>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="images/carousel4.jpg" class="d-block w-100" alt="Slide 4">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="images/carousel5.jpg" class="d-block w-100" alt="Slide 5">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="images/carousel6.jpg" class="d-block w-100" alt="ultimo  slide">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-  </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="contact-section">
-  <img src="images/ascii-deco3.svg" class="ascii-deco ascii-deco--contact" aria-hidden="true">
-
-  <div class="row align-items-center justify-content-center">
-
-    <div class="col-md-5 contact-img">
-      <img src="images/imagen-contact.svg" alt="collage contacto" class="img-fluid">
-    </div>
-
-    <div class="col-md-5">
-      <h2>Contact</h2>
-      <p>Buenos Aires, Argentina</p>
-      <p>veneziaabarquero@gmail.com</p>
-      <p>+54 11 2736-0056</p>
-
-      <div class="social-links">
-        <a href="https://instagram.com/venezia.abqro" target="_blank" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
+        <a href="proyecto-videoclip.html" class="work-link">
+          <span class="work-number">01</span>
+          <div class="work-img">
+            <img src="images/portada-videoclip.jpg" alt="Edicion y Montaje - Videoclip">
+          </div>
+          <p class="work-title">Edicion y Montaje - Videoclip</p>
         </a>
-        <a href="https://behance.net/veneziaabarque1" target="_blank" aria-label="Behance">
-          <i class="fa-brands fa-behance"></i>
+
+        <a href="proyecto-fanzine.html" class="work-link">
+          <span class="work-number">02</span>
+          <div class="work-img">
+            <img src="images/portada-fanzine.jpg" alt="Diseño Editorial - Fanzine">
+          </div>
+          <p class="work-title">Diseño Editorial - Fanzine</p>
         </a>
-        <a href="archivos/CV_Venezia_Abarquero.pdf" target="_blank" aria-label="CV" download>
-        CV
+
+        <a href="proyecto-libro.html" class="work-link">
+          <span class="work-number">03</span>
+          <div class="work-img">
+            <img src="images/portada-libro.jpg" alt="Diseño Editorial - Libro Objeto">
+          </div>
+          <p class="work-title">Diseño Editorial - Libro Objeto</p>
         </a>
+
+        <a href="proyecto-visuales.html" class="work-link">
+          <span class="work-number">04</span>
+          <div class="work-img">
+            <img src="images/portada-visuales.jpg" alt="Arte Generativo - Visuales">
+          </div>
+          <p class="work-title">Arte Generativo - Visuales</p>
+        </a>
+
+        <a href="proyecto-collage.html" class="work-link">
+          <span class="work-number">05</span>
+          <div class="work-img">
+            <img src="images/portada-collage.jpg" alt="Collage Creativo">
+          </div>
+          <p class="work-title">Collage Creativo</p>
+        </a>
+
+        <a href="proyecto-modelado3D.html" class="work-link">
+          <span class="work-number">06</span>
+          <div class="work-img">
+            <img src="images/portada-tipografia3D.jpg" alt="Modelado y Esculpido 3D">
+          </div>
+          <p class="work-title">Modelado y Esculpido 3D</p>
+        </a>
+
       </div>
-    </div>
 
-  </div>
-</section>
+      <!-- carrusel trabajo 3D -->
+      <div id="carouselExampleCaptions" class="carousel slide carousel-3d fade-in-right">
 
-<!-- Footer -->
-<footer class="footer">
-  <p>© 2026 Venezia Abarquero Di Stilio. Todos los derechos reservados.</p>
-</footer>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <video class="d-block w-100" autoplay muted loop playsinline poster="images/carousel1.jpg">
+              <source src="images/video-carousel3D.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Animación y Modelado 3D/Escena</h5>
+              <p>"The Doors Room"</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="images/carousel2.jpg" class="d-block w-100" alt="Slide 2">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Animación y Modelado 3D/Escena</h5>
+              <p>Una reinterpretación de "La Sala de las Puertas", la icónica y lúgubre habitación circular rodeada de puertas de Alicia en el País de las Maravillas (2010).</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="images/carousel3.jpg" class="d-block w-100" alt="Slide 3">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Animación y Modelado 3D/Escena</h5>
+              <p>Trabajé sobre su atmósfera y composición para llevarla a una versión 3D con una vision propia.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="images/carousel4.jpg" class="d-block w-100" alt="Slide 4">
+            <div class="carousel-caption d-none d-md-block"></div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="images/carousel5.jpg" class="d-block w-100" alt="Slide 5">
+            <div class="carousel-caption d-none d-md-block"></div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="images/carousel6.jpg" class="d-block w-100" alt="ultimo slide">
+            <div class="carousel-caption d-none d-md-block"></div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+      <img src="images/ascii-deco3.svg" class="ascii-deco ascii-deco--contact" aria-hidden="true">
+
+      <div class="row align-items-center justify-content-center">
+
+        <div class="col-md-5 contact-img fade-in-left">
+          <img src="images/imagen-contact.svg" alt="collage contacto" class="img-fluid">
+        </div>
+
+        <div class="col-md-5 fade-in-right">
+          <h2>Contact</h2>
+          <p>Buenos Aires, Argentina</p>
+          <p>veneziaabarquero@gmail.com</p>
+          <p>+54 11 2736-0056</p>
+
+          <div class="social-links">
+            <a href="https://instagram.com/venezia.abqro" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://behance.net/veneziaabarque1" target="_blank" aria-label="Behance">
+              <i class="fa-brands fa-behance"></i>
+            </a>
+            <a href="archivos/CV_Venezia_Abarquero.pdf" target="_blank" aria-label="CV" download>
+              CV
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 Venezia Abarquero Di Stilio. Todos los derechos reservados.</p>
+    </footer>
+
   </main>
 
   <!-- Boton cta fijo -->
   <a class="btn btn-outline-dark btn-cta" href="mailto:veneziaabarquero@gmail.com">Email me!</a>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="ascii-interactive.js"></script>
+  <script src="animaciones.js"></script>
 </body>
 </html>
