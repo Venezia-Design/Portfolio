@@ -231,19 +231,29 @@ canvas.ascii-deco--contact {
     height: 280px !important;
   }
 
-  .project-nav {
-    padding: 2rem 0;
-  }
-  
-  .project-nav .pagination {
-  width: 100%;
-  justify-content: space-between;
-} 
+.project-nav {
+  padding: 2rem 0;
+}
 
-  .project-nav .page-link {
-    font-size: 0.75rem;
-    white-space: nowrap; /*evita que el texto se corte en dos líneas*/
-  }
+.project-nav ul.pagination {
+  width: 100%;
+  justify-content: space-between !important;
+  margin: 0;
+  padding: 0;
+}
+
+.project-nav .page-item:last-child .page-link {
+  padding-right: 0;
+}
+
+.project-nav .page-item:first-child .page-link {
+  padding-left: 0;
+}
+
+.project-nav .page-link {
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
 
   .social-links a {
   width: 28px;
