@@ -255,6 +255,11 @@ canvas.ascii-deco--contact {
   white-space: nowrap;
 }
 
+.project-nav-prev,
+.project-nav-next {
+  font-size: 0.55rem;
+}
+
   .social-links a {
   width: 28px;
   height: 28px;
