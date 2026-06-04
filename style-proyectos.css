@@ -105,33 +105,24 @@ body.project-page {
 
 /*navegación entre proyectos*/
 .project-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 2.5rem 0;
   margin-top: 1rem;
-  display: flex;
-  justify-content: center;
 }
 
-.project-nav .page-link {
+.project-nav-prev,
+.project-nav-next {
   color: black;
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
-  border: none;
-  background: transparent;
   transition: opacity 0.2s;
 }
 
-.project-nav .page-link:hover {
-  color: black;
+.project-nav-prev:hover,
+.project-nav-next:hover {
   opacity: 0.4;
-  background: transparent;
-}
-
-.project-nav .page-item.active .page-link,
-.project-nav .page-link:focus {
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
   color: black;
 }
-
