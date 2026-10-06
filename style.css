@@ -44,6 +44,7 @@ body {
 
 .main-content {
   margin-left: 6rem;
+  overflow-x: clip;          /* evita que algo ancho agrande la pagina y aparezca la barra horizontal */
 }
 
 /* Home */
@@ -64,9 +65,92 @@ body {
   scroll-margin-top: 0;
 }
 
-.academic-info p {
-  font-size: 0.75rem;
-  color: grey;
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+/* Ficha técnica About */
+.dossier-card {
+  margin-top: 1.5rem;
+}
+
+.dossier-heading {
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  color:  hsl(5, 31%, 59%);
+  margin-bottom: 1.25rem;
+}
+
+.academic-timeline {
+  row-gap: 1.5rem;
+}
+
+.academic-year {
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+  color: hsl(5, 31%, 59%);
+  margin-bottom: 0.4rem;
+}
+
+.academic-inst {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(183, 123, 117, 0.75);
+  margin-bottom: 0.2rem;
+}
+
+.academic-detail {
+  font-size: 0.7rem;
+  color: rgba(183, 123, 117, 0.55);
+  line-height: 1.4;
+}
+
+/* Toolkit: carrusel de logos full width */
+.toolkit-section {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+}
+
+.toolkit-title {
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo-carousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.logo-column {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-column img {
+  height: 44px;
+  width: auto;
+  opacity: 1;
+  transform: translateY(0);
+  filter: brightness(0) opacity(0.65);
+  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.3s ease;
+}
+
+.logo-column:hover img {
+  filter: brightness(1);
+}
+
+.logo-column img.is-hidden {
+  opacity: 0;
+  transform: translateY(-14px);
 }
 
 /* Work */
@@ -77,46 +161,66 @@ body {
   scale: 85%;
 }
 
-/* Galería Work */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+/* Galería horizontal: items iguales de ancho, alto segun la proporcion de cada imagen */
+.work-scroll {
+  display: flex;
+  align-items: flex-start;   /* todos alineados arriba */
+  gap: 1rem;                 /* separacion fija, nunca se tocan */
+  overflow-x: auto;
+  padding: 2rem 0 1rem;      /* sin margenes laterales: arranca pegada al borde izquierdo */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.work-link {
+.work-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.work-item {
+  /* ancho base x factor de proporcion (--f lo calcula el script del index).
+     Imagenes cuadradas: factor 1. Horizontales un poco mas anchas, verticales un poco mas angostas */
+  flex: 0 0 calc(clamp(200px, 24vw, 340px) * var(--f, 1));
   text-decoration: none;
   color: black;
-  display: block;
-  margin-bottom: 1rem;
   opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 1.4s ease, transform 1.4s ease, border-color 0.3s ease;
-  border-bottom: 1px solid transparent;
+  animation: fade-in 1s ease forwards;
 }
 
-.work-link.visible {
-  opacity: 1;
-  transform: translateX(0);
+.work-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  color: black;
+  margin-top: 0.6rem;
 }
 
-.work-img {
+.work-num {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: black;
+}
+
+.work-name {
+  min-width: 0;
+  font-size: 0.8rem;
+  color: black;
+}
+
+.work-img-wrap {
   position: relative;
   overflow: hidden;
 }
 
-.work-img img {
+.work-img-wrap img {
   display: block;
   width: 100%;
-  height: auto;
-  transition: transform 0.4s ease;
+  height: auto;              /* el alto lo da la proporcion real de la imagen */
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
-.work-link:hover .work-img img {
-  transform: scale(1.04);
-}
-
-.work-img::after {
+.work-img-wrap::after {
   content: 'Ver proyecto';
   position: absolute;
   inset: 0;
@@ -132,42 +236,145 @@ body {
   font-size: 0.85rem;
 }
 
-.work-link:hover .work-img::after {
+.work-item:hover .work-img-wrap::after {
   opacity: 1;
 }
 
-.work-link:hover {
-  border-bottom: 1px solid black;
-}
-
- .work-title {
-  font-size: 0.75rem;
-  color: black;
-  margin-top: 0.4rem;
-  margin-bottom: 0;
-}
-
-.work-number {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  letter-spacing: 0.1em;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.work-link:hover .work-number {
-  opacity: 1;
-}
-
-.carousel-3d {
+/* Video + texto (mitad y mitad) */
+/* Imagen + video (mitad y mitad) */
+.video-split {
   position: relative;
   z-index: 1;
-  margin-top: 20vh;
+  margin-top: 10rem;                       /* espacio entre la galeria de trabajos y esta seccion */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 1.5rem;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .video-split {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+}
+
+/* Izquierda: texto + dos imagenes + ascii art por detras */
+.astra-block {
+  position: relative;
+  align-self: stretch;                     /* ahora llega hasta el borde de abajo del video */
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  margin-left: calc(var(--astra-extra, 6rem) * -1);
+  margin-right: 1rem;                      /* antes 4rem: menos margen = imágenes más grandes */
+}
+
+.astra-text {
+  position: relative;
+  z-index: 1;
+  max-width: 12rem;
+  margin-left: auto;                       /* esquina derecha */
+  text-align: right;
+}
+
+.astra-text h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 0.4rem;
+}
+
+.astra-text p {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: black;
+  margin: 0;
+}
+
+.astra-imgs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;                   /* alineadas abajo: las diferencias de alto se ven arriba */
+  gap: 0.8rem;
+  margin-top: 3rem;                        /* distancia entre el texto y las imagenes */
+}
+
+.astra-imgs img {
+  display: block;
+  min-width: 0;
+  height: auto;
+}
+
+.astra-img-1 { flex: 1.7 1 0; }            /* proporcion de ancho entre las dos imagenes */
+.astra-img-2 { flex: 1 1 0; }
+
+.astra-imgs {
+  margin-bottom: 1rem;                     /* separación mínima con el botón */
+}
+
+.btn-project {
+  position: relative;
+  z-index: 1;                              /* por encima del ascii art */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;          /* texto a la izquierda, flecha a la derecha */
+  width: 100%;                              /* largo del botón: subilo o bajalo a gusto */
+  margin-top: auto;
+  margin-left: auto;                       /* alineado al lado derecho de las imágenes */
+  font-weight: 600;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 0;
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.541);
+}
+
+.btn-project:hover {
+  background: black;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .btn-project {
+    width: 100%;                           /* en celular ocupa todo el ancho */
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  .astra-block {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+  .astra-text {
+    max-width: none;
+  }
+}
+
+/* Derecha */
+.video-frame {
+  position: relative;
+  overflow: hidden;
+  width: calc(100% + var(--extra, 0px));   /* --extra la calcula el script para llegar al borde */
+  aspect-ratio: 1 / 1;                     /* formato del recorte: probá 4 / 5, 4 / 3, 16 / 10... */
+  container-type: size;
+}
+
+.video-frame iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100cqw, 100cqh * 16 / 9);
+  height: max(100cqh, 100cqw * 9 / 16);
+  transform: translate(-50%, -50%);
+  border: 0;
+  pointer-events: none;
 }
 
 /* Contacto */
