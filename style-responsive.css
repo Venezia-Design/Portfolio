@@ -231,6 +231,65 @@ canvas.ascii-deco--contact {
     height: 280px !important;
   }
 
+  /* ================================
+   RESPONSIVE - SECCIÓN ASTRA
+   ================================ */
+
+@media (max-width: 767px) {
+
+  /* La sección pasa a una sola columna */
+  .video-split {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* En celular: VIDEO PRIMERO */
+  .video-col {
+    order: -1;
+    width: 100%;
+  }
+
+  /* El video ocupa todo el ancho disponible */
+  .video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    container-type: normal;
+  }
+
+  /* El iframe deja de calcularse con cqw/cqh */
+  .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border: 0;
+  }
+
+  /* Contenido de Astra debajo del video */
+  .astra-block {
+    order: 1;
+    width: 100%;
+    margin: 0;
+  }
+
+  .astra-text {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    text-align: right;
+  }
+
+  .astra-imgs {
+    width: 100%;
+  }
+
+  .btn-project {
+    width: 100%;
+  }
+}
+
 .project-nav {
   padding: 2rem 0;
 }
